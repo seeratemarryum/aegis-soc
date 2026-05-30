@@ -87,3 +87,13 @@ When you start `dashboard_server.py`, a background thread runs a 30-tick state c
 4. **Breach (Tick 18)**: The attacker logs in successfully, triggering a `BRUTE_FORCE_SUCCESS` alert.
 5. **Mitigation (Ticks 19-20)**: The SOAR playbook engine blocks the attacker. Subsequent connections are rejected by the firewall.
 6. **Recovery (Ticks 21-30)**: Normal monitoring resumes. The attacker IP resets, and the loop restarts.
+
+---
+
+## 👥 Contributors & Team Roles
+
+This project was built as a collaborative effort by our team of 3 members:
+
+* **Seerat Marryum (Lead Security Engineer & ML)**: Designed the UEBA Isolation Forest machine learning engine, custom feature vector normalizer, and Explainable AI (XAI) mathematical calculations.
+* **[Member 2 Name] (SOC Infrastructure Engineer)**: Developed the real-time syslog normalization rules, signature correlation engine, and Flask API integration.
+* **[Member 3 Name] (Automation & Interface Designer)**: Constructed the SOAR Playbook Engine, PagerDuty/Slack notification integrations, and developed the glassmorphic dark-themed visual console.
