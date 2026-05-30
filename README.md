@@ -95,5 +95,5 @@ When you start `dashboard_server.py`, a background thread runs a 30-tick state c
 This project was built as a collaborative effort by our team of 3 members:
 
 * **Seerat Marryum (Lead Security Engineer & ML)**: Designed the UEBA Isolation Forest machine learning engine, custom feature vector normalizer, and Explainable AI (XAI) mathematical calculations.
-* **[Member 2 Name] (SOC Infrastructure Engineer)**: Developed the real-time syslog normalization rules, signature correlation engine, and Flask API integration.
-* **[Member 3 Name] (Automation & Interface Designer)**: Constructed the SOAR Playbook Engine, PagerDuty/Slack notification integrations, and developed the glassmorphic dark-themed visual console.
+* **Ayesha (SOC Infrastructure Engineer)**: Developed the real-time syslog normalization rules, signature correlation engine, and Flask API integration.
+* **Linh Doan (Automation & Interface Designer)**: Constructed the SOAR Playbook Engine, PagerDuty/Slack notification integrations, and developed the glassmorphic dark-themed visual console.
