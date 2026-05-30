@@ -1,0 +1,16 @@
+SOC INCIDENT REPORT
+============================================================
+Incident ID: INC-20260530-161010
+Priority: CRITICAL
+Generated: 2026-05-30 16:10:10
+
+SUMMARY:
+The attacker (185.220.101.42) began with reconnaissance, probing the target server's open ports to identify available services. The attacker then launched an SSH brute force attack, making 5 failed login attempts in rapid succession. The attack targeted multiple accounts using an automated tool consistent with Hydra or Medusa. The attack was detected before a successful breach. However, immediate blocking and review are still required.
+
+SOURCE IPs: 185.220.101.42
+BREACH: No
+
+IMMEDIATE ACTIONS:
+  1. Block IP 185.220.101.42 at perimeter firewall and cloud security groups
+  2. Add Fail2ban or equivalent to auto-block brute force IPs
+  3. Review sshd_config: set PermitRootLogin no, MaxAuthTries 3

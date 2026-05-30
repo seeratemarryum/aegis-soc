@@ -1,0 +1,13 @@
+# Cache
+__pycache__/
+*.pyc
+
+# Logs & Telemetry files
+phase1/sample_auth.log
+phase6/soar_audit.log
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

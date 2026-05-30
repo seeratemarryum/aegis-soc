@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEGIS Autonomous SOC Console</title>
+    <!-- Google Fonts: Outfit (modern display) & Inter (UI text) & JetBrains Mono (code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Dashboard Stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-shield-halved brand-icon"></i>
+                <div class="brand-text">
+                    <h2>AEGIS SOC</h2>
+                    <span>PLATFORM V1.0</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-tab="overview" id="menu-overview">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard Overview</span>
+                </a>
+                <a href="#" class="menu-item" data-tab="mitre" id="menu-mitre">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <span>MITRE ATT&CK Chain</span>
+                </a>
+                <a href="#" class="menu-item" data-tab="ml-anomaly" id="menu-ml">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>ML Anomaly Detector</span>
+                </a>
+                <a href="#" class="menu-item" data-tab="soar" id="menu-soar">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>SOAR Response Console</span>
+                </a>
+                <a href="#" class="menu-item" data-tab="reports" id="menu-reports">
+                    <i class="fa-solid fa-file-invoice-solid fa-file-lines"></i>
+                    <span>Incident Reports</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="system-status-indicator">
+                    <span class="status-dot green animate-pulse" id="status-dot"></span>
+                    <span class="status-label" id="status-label">MONITORING</span>
+                </div>
+                <div class="last-sync">
+                    <span>Last updated: </span>
+                    <span id="sync-time" class="mono">--:--:--</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content Wrapper -->
+        <main class="main-content">
+            
+            <!-- Header bar -->
+            <header class="content-header">
+                <div class="header-title">
+                    <span class="breadcrumb">SOC TRAINING GROUND / ENVIRONMENT</span>
+                    <h1 id="page-title">Dashboard Overview</h1>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="server-connection-badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>SIEM Connected</span>
+                    </div>
+                    <button class="btn btn-refresh" id="btn-refresh">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Sync Data</span>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- KPI Statistics Row -->
+            <section class="kpi-grid">
+                <div class="kpi-card card-glow" id="kpi-events">
+                    <div class="kpi-icon-wrapper blue">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Events Processed</span>
+                        <h3 class="kpi-value" id="kpi-events-value">0</h3>
+                    </div>
+                </div>
+                
+                <div class="kpi-card" id="kpi-alerts">
+                    <div class="kpi-icon-wrapper amber">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Total Alerts</span>
+                        <h3 class="kpi-value" id="kpi-alerts-value">0</h3>
+                    </div>
+                </div>
+                
+                <div class="kpi-card" id="kpi-critical">
+                    <div class="kpi-icon-wrapper red">
+                        <i class="fa-solid fa-circle-radiation"></i>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Critical Alerts</span>
+                        <h3 class="kpi-value" id="kpi-critical-value">0</h3>
+                    </div>
+                </div>
+                
+                <div class="kpi-card" id="kpi-anomalies">
+                    <div class="kpi-icon-wrapper purple">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">ML Anomalies</span>
+                        <h3 class="kpi-value" id="kpi-anomalies-value">0</h3>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Dynamic Tab Content Sections -->
+            <div class="tab-container">
+                
+                <!-- Tab: Overview -->
+                <div class="tab-panel active" id="panel-overview">
+                    <div class="grid-layout cols-2-1">
+                        <!-- Chart section -->
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-area"></i> Alert Timeline (Count / Hour)</h3>
+                                <span class="card-subtitle">Real-time alert rate velocity</span>
+                            </div>
+                            <div class="card-body chart-wrapper">
+                                <canvas id="timelineChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Event type distribution donut -->
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Severity Distribution</h3>
+                            </div>
+                            <div class="card-body chart-wrapper">
+                                <canvas id="severityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-layout cols-1-1 mt-6">
+                        <!-- Left: Live Alert Feed -->
+                        <div class="card">
+                            <div class="card-header flex justify-between align-center">
+                                <div>
+                                    <h3><i class="fa-solid fa-bell"></i> Live Alert Stream</h3>
+                                    <span class="card-subtitle">Correlated triggers from the Detection Engine</span>
+                                </div>
+                                <span class="badge badge-outline" id="alert-feed-count">0 alerts</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-scroll max-h-450">
+                                    <table class="table-dark" id="alerts-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Alert ID</th>
+                                                <th>Rule triggered</th>
+                                                <th>Source IP</th>
+                                                <th>Severity</th>
+                                                <th>Time</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="6" class="text-center py-6 text-muted">Loading alert stream...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right: Raw normalized event stream -->
+                        <div class="card">
+                            <div class="card-header flex justify-between align-center">
+                                <div>
+                                    <h3><i class="fa-solid fa-server"></i> Normalized SSH Log stream</h3>
+                                    <span class="card-subtitle">Output of Phase 1 Log Parser</span>
+                                </div>
+                                <span class="badge badge-info" id="parsed-events-count">0 events</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-scroll max-h-450">
+                                    <table class="table-dark table-striped" id="parsed-events-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Line</th>
+                                                <th>Event type</th>
+                                                <th>User</th>
+                                                <th>Source IP</th>
+                                                <th>Severity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5" class="text-center py-6 text-muted">Loading log data...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab: MITRE ATT&CK -->
+                <div class="tab-panel" id="panel-mitre">
+                    <div class="card mb-6">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-layer-group"></i> MITRE ATT&CK Kill Chain Mapping</h3>
+                            <span class="card-subtitle">Visual mapping of active threats to the cyber kill chain standard</span>
+                        </div>
+                        <div class="card-body">
+                            <!-- Visual Kill Chain Progress Tracker -->
+                            <div class="kill-chain-timeline" id="kill-chain-timeline">
+                                <!-- Populated dynamically by JS -->
+                                <div class="timeline-step">
+                                    <div class="step-badge">1</div>
+                                    <div class="step-title">Reconnaissance</div>
+                                    <div class="step-desc">Port Scan detected</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-magnifying-glass"></i> Mapped Threat Techniques</h3>
+                            <span class="card-subtitle">Technical definitions and recommended remediations for observed attacker behavior</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-scroll">
+                                <table class="table-dark" id="mitre-techniques-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Technique ID</th>
+                                            <th>Technique Name</th>
+                                            <th>Tactic Stage</th>
+                                            <th>Real-World Example</th>
+                                            <th>Recommended Mitigation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="5" class="text-center py-6 text-muted">Loading techniques mapping...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab: ML Anomaly Detector -->
+                <div class="tab-panel" id="panel-ml-anomaly">
+                    <div class="grid-layout cols-3-1">
+                        <!-- Isolation forest results -->
+                        <div class="card span-2">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-line-up"></i> Isolation Forest Behavioral Scoring</h3>
+                                <span class="card-subtitle">Model extracts multivariable features to isolate anomalies without predefined rules</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-scroll">
+                                    <table class="table-dark" id="ml-scoring-table">
+                                        <thead>
+                                            <tr>
+                                                <th>IP Address</th>
+                                                <th>Anomaly Score</th>
+                                                <th>Decision Boundary</th>
+                                                <th>Failure Rate</th>
+                                                <th>Unique Users</th>
+                                                <th>Off-Hours login</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="7" class="text-center py-6 text-muted">Loading isolation forest scores...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model configuration and info -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-sliders"></i> Model Metadata</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="info-list">
+                                    <div class="info-item">
+                                        <span class="label">Algorithm</span>
+                                        <span class="val highlight-blue">Isolation Forest</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Contamination Factor</span>
+                                        <span class="val id-tag" id="ml-contamination">8%</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Number of Estimators</span>
+                                        <span class="val id-tag" id="ml-estimators">100</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Model Baseline</span>
+                                        <span class="val">Clean Normal Traffic Only</span>
+                                    </div>
+                                </div>
+                                <div class="alert-box-info mt-6">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <p>Unlike signature rules, ML flags the Low-and-Slow brute force attacker because their feature footprint (100% failure rate, external IP) stands out in multidimensional space.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-6">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-circle-question"></i> Explainable AI (XAI) - Anomaly Root Cause Analysis</h3>
+                            <span class="card-subtitle">Statistical deviation report of flagged behavioral anomalies</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-scroll">
+                                <table class="table-dark" id="ml-xai-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Flagged IP</th>
+                                            <th>Feature Category</th>
+                                            <th>Deviation Scale</th>
+                                            <th>Human Explanation Narrative</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4" class="text-center py-6 text-muted">Loading XAI deviations...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab: SOAR Response Console -->
+                <div class="tab-panel" id="panel-soar">
+                    <div class="grid-layout cols-2-1">
+                        <!-- Playbook executions list -->
+                        <div class="card">
+                            <div class="card-header flex justify-between align-center">
+                                <div>
+                                    <h3><i class="fa-solid fa-list-ol"></i> Triggered SOAR Playbooks</h3>
+                                    <span class="card-subtitle">Automated response recipes based on incident profiles</span>
+                                </div>
+                                <span class="badge badge-success" id="blocked-ips-count">Active</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-scroll max-h-400">
+                                    <table class="table-dark" id="soar-playbooks-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Playbook Name</th>
+                                                <th>Started At</th>
+                                                <th>Steps</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5" class="text-center py-6 text-muted">Loading playbooks...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Blocked IPs firewall console -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-ban"></i> Perimeter IP Blocks</h3>
+                                <span class="card-subtitle">Active firewall rules updated by SOAR playbooks</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-scroll max-h-400">
+                                    <table class="table-dark" id="blocked-ips-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Attacker IP</th>
+                                                <th>Reason</th>
+                                                <th>Auto-Unblock At</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3" class="text-center py-6 text-muted">No active blocks.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Audit Logs console -->
+                    <div class="card mt-6">
+                        <div class="card-header flex justify-between align-center">
+                            <div>
+                                <h3><i class="fa-solid fa-terminal"></i> SOAR Response Audit Logs</h3>
+                                <span class="card-subtitle">Permanent cryptographic audit trails for all automated containment steps</span>
+                            </div>
+                            <span class="badge id-tag">Read-only</span>
+                        </div>
+                        <div class="card-body audit-console-wrapper">
+                            <pre class="audit-console" id="audit-log-terminal">Loading audit records...</pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab: Incident Reports -->
+                <div class="tab-panel" id="panel-reports">
+                    <div class="incident-report-viewer" id="incident-report-section">
+                        <!-- Not available placeholder -->
+                        <div class="card text-center py-12" id="report-placeholder">
+                            <i class="fa-regular fa-file-excel fa-6x text-muted mb-4"></i>
+                            <h3>No Incident Report Generated Yet</h3>
+                            <p class="text-muted mt-2 max-w-500 mx-auto">Incident reports are generated by Phase 5 Explanation Engine after a correlated attack occurs. Run the pipeline to view generated analytics reports.</p>
+                        </div>
+                        
+                        <!-- Rich Report Content -->
+                        <div class="report-container hidden" id="report-content">
+                            <div class="report-header">
+                                <div class="report-meta-box">
+                                    <div class="report-title-row">
+                                        <h2 id="report-id" class="id-tag">INC-20260530-001</h2>
+                                        <span class="badge" id="report-priority">CRITICAL</span>
+                                    </div>
+                                    <h1 class="report-subject mt-2">SSH Brute Force Attack & Compromise Incident Report</h1>
+                                    <div class="meta-subtext-grid mt-4">
+                                        <div><strong>Generated At:</strong> <span id="report-date">--:--</span></div>
+                                        <div><strong>Lead Analyst:</strong> <span id="report-analyst">SOC AI v1.0</span></div>
+                                        <div><strong>Target Host:</strong> <span id="report-target" class="mono">prod-webserver-01</span></div>
+                                        <div><strong>Confirmed Breach:</strong> <span id="report-breach" class="text-red">YES</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid-layout cols-2-1 mt-6">
+                                <div>
+                                    <!-- Narrative section -->
+                                    <div class="card mb-6">
+                                        <div class="card-header">
+                                            <h3><i class="fa-solid fa-align-left"></i> Executive Summary Narrative</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="narrative-text" id="report-narrative">Loading narrative...</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Timeline section -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3><i class="fa-solid fa-clock-rotate-left"></i> Reconstructed Attack Timeline</h3>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="timeline-visual" id="report-timeline">
+                                                <!-- Dynamic timeline events -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <!-- Immediate Actions check-list -->
+                                    <div class="card mb-6 bg-glow-red">
+                                        <div class="card-header">
+                                            <h3><i class="fa-solid fa-fire-extinguisher"></i> Immediate Containment Actions</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="action-checklist" id="report-actions">
+                                                <!-- Checkbox items -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Long term recommendations -->
+                                    <div class="card bg-glow-blue">
+                                        <div class="card-header">
+                                            <h3><i class="fa-solid fa-hand-holding-heart"></i> Long-Term Security Hardening</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="action-checklist recommendations" id="report-recommendations">
+                                                <!-- Bullets -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </main>
+        
+    </div>
+
+    <!-- Interactive Inspector Modal (Popup for detail logs/payload view) -->
+    <div class="modal" id="detail-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Inspect Log Event</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre class="json-code" id="modal-json-display">Loading event...</pre>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modal-close-action">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script Logic file -->
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>

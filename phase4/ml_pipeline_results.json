@@ -1,0 +1,7 @@
+{
+  "ml_results": [],
+  "config": {
+    "contamination": 0.08,
+    "n_estimators": 100
+  }
+}

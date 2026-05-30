@@ -1,0 +1,778 @@
+{
+  "report_metadata": {
+    "incident_id": "INC-20260530-171633",
+    "generated_at": "2026-05-30 17:16:33",
+    "analyst": "Aegis Incident Response Engine",
+    "detection_system": "Autonomous SOC Analyst v1.0 (Phases 1-5)",
+    "report_version": "1.0"
+  },
+  "incident_summary": {
+    "priority": "CRITICAL",
+    "priority_score": 10,
+    "priority_reasoning": "Account compromise detected -- maximum priority",
+    "total_alerts": 15,
+    "is_confirmed_breach": true,
+    "compromised_account": "alice",
+    "source_ips": [
+      "198.51.100.73",
+      "185.220.101.42",
+      "192.168.1.50",
+      "103.75.190.200",
+      "45.142.212.100",
+      "203.0.113.88"
+    ],
+    "target_systems": [
+      "prod-webserver-01"
+    ],
+    "first_seen": "2026-05-30 16:52:44",
+    "attack_description": "The attacker (6 external IP addresses) began with reconnaissance, probing the target server's open ports to identify available services. The brute force attack succeeded: the attacker gained access to the 'alice' account. The system must be treated as fully compromised. Immediate incident response is required."
+  },
+  "attack_timeline": [
+    {
+      "timestamp": "2026-05-30 16:52:44",
+      "phase": "BREACH",
+      "severity": "CRITICAL",
+      "description": "ACCOUNT COMPROMISED: 'alice' from 192.168.1.50. 3 failures before success.",
+      "alert_id": "SOC-00023",
+      "source_ip": "192.168.1.50",
+      "mitre_tactic": "TA0001 - Initial Access"
+    },
+    {
+      "timestamp": "2026-05-30 16:53:58",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 198.51.100.73. 5 rapid connection probes.",
+      "alert_id": "SOC-00024",
+      "source_ip": "198.51.100.73",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 16:55:35",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 203.0.113.88. 5 rapid connection probes.",
+      "alert_id": "SOC-00025",
+      "source_ip": "203.0.113.88",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 16:57:12",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 185.220.101.42. 5 rapid connection probes.",
+      "alert_id": "SOC-00026",
+      "source_ip": "185.220.101.42",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 16:58:48",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 45.142.212.100. 5 rapid connection probes.",
+      "alert_id": "SOC-00027",
+      "source_ip": "45.142.212.100",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:00:24",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 103.75.190.200. 5 rapid connection probes.",
+      "alert_id": "SOC-00028",
+      "source_ip": "103.75.190.200",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:02:01",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 198.51.100.73. 5 rapid connection probes.",
+      "alert_id": "SOC-00029",
+      "source_ip": "198.51.100.73",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:03:40",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 203.0.113.88. 5 rapid connection probes.",
+      "alert_id": "SOC-00030",
+      "source_ip": "203.0.113.88",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:05:17",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 185.220.101.42. 5 rapid connection probes.",
+      "alert_id": "SOC-00031",
+      "source_ip": "185.220.101.42",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:06:54",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 45.142.212.100. 5 rapid connection probes.",
+      "alert_id": "SOC-00032",
+      "source_ip": "45.142.212.100",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:08:31",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 103.75.190.200. 5 rapid connection probes.",
+      "alert_id": "SOC-00033",
+      "source_ip": "103.75.190.200",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:10:08",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 198.51.100.73. 5 rapid connection probes.",
+      "alert_id": "SOC-00034",
+      "source_ip": "198.51.100.73",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:11:45",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 203.0.113.88. 5 rapid connection probes.",
+      "alert_id": "SOC-00035",
+      "source_ip": "203.0.113.88",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:13:22",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 185.220.101.42. 5 rapid connection probes.",
+      "alert_id": "SOC-00036",
+      "source_ip": "185.220.101.42",
+      "mitre_tactic": "TA0007 - Discovery"
+    },
+    {
+      "timestamp": "2026-05-30 17:14:59",
+      "phase": "RECONNAISSANCE",
+      "severity": "MEDIUM",
+      "description": "Port scan detected from 45.142.212.100. 5 rapid connection probes.",
+      "alert_id": "SOC-00037",
+      "source_ip": "45.142.212.100",
+      "mitre_tactic": "TA0007 - Discovery"
+    }
+  ],
+  "mitre_attack": {
+    "kill_chain": [
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00024",
+        "severity": "MEDIUM",
+        "source_ip": "198.51.100.73",
+        "timestamp": "2026-05-30 16:53:58"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00025",
+        "severity": "MEDIUM",
+        "source_ip": "203.0.113.88",
+        "timestamp": "2026-05-30 16:55:35"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00026",
+        "severity": "MEDIUM",
+        "source_ip": "185.220.101.42",
+        "timestamp": "2026-05-30 16:57:12"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00027",
+        "severity": "MEDIUM",
+        "source_ip": "45.142.212.100",
+        "timestamp": "2026-05-30 16:58:48"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00028",
+        "severity": "MEDIUM",
+        "source_ip": "103.75.190.200",
+        "timestamp": "2026-05-30 17:00:24"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00029",
+        "severity": "MEDIUM",
+        "source_ip": "198.51.100.73",
+        "timestamp": "2026-05-30 17:02:01"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00030",
+        "severity": "MEDIUM",
+        "source_ip": "203.0.113.88",
+        "timestamp": "2026-05-30 17:03:40"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00031",
+        "severity": "MEDIUM",
+        "source_ip": "185.220.101.42",
+        "timestamp": "2026-05-30 17:05:17"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00032",
+        "severity": "MEDIUM",
+        "source_ip": "45.142.212.100",
+        "timestamp": "2026-05-30 17:06:54"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00033",
+        "severity": "MEDIUM",
+        "source_ip": "103.75.190.200",
+        "timestamp": "2026-05-30 17:08:31"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00034",
+        "severity": "MEDIUM",
+        "source_ip": "198.51.100.73",
+        "timestamp": "2026-05-30 17:10:08"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00035",
+        "severity": "MEDIUM",
+        "source_ip": "203.0.113.88",
+        "timestamp": "2026-05-30 17:11:45"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00036",
+        "severity": "MEDIUM",
+        "source_ip": "185.220.101.42",
+        "timestamp": "2026-05-30 17:13:22"
+      },
+      {
+        "tactic_id": "TA0007",
+        "tactic_name": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "alert_id": "SOC-00037",
+        "severity": "MEDIUM",
+        "source_ip": "45.142.212.100",
+        "timestamp": "2026-05-30 17:14:59"
+      },
+      {
+        "tactic_id": "TA0001",
+        "tactic_name": "Initial Access",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "alert_id": "SOC-00023",
+        "severity": "CRITICAL",
+        "source_ip": "192.168.1.50",
+        "timestamp": "2026-05-30 16:52:44"
+      },
+      {
+        "tactic_id": "TA0008",
+        "tactic_name": "Lateral Movement",
+        "technique_id": "T1021.004",
+        "technique_name": "Remote Services: SSH",
+        "alert_id": "SOC-00023",
+        "severity": "CRITICAL",
+        "source_ip": "192.168.1.50",
+        "timestamp": "2026-05-30 16:52:44"
+      }
+    ],
+    "techniques_observed": [
+      {
+        "id": "T1078",
+        "name": "Valid Accounts",
+        "tactic": "Initial Access",
+        "severity_weight": 10,
+        "real_world_examples": [
+          "Most ransomware groups gain access via stolen/brute-forced credentials",
+          "2021 Colonial Pipeline attack started with compromised VPN credentials"
+        ],
+        "mitigations": [
+          "MFA on all accounts",
+          "Behavioral analytics on logins (unusual time, location)",
+          "Privileged access management (PAM)"
+        ]
+      },
+      {
+        "id": "T1021.004",
+        "name": "Remote Services: SSH",
+        "tactic": "Lateral Movement",
+        "severity_weight": 8,
+        "real_world_examples": [
+          "APT41 uses SSH for lateral movement in compromised networks"
+        ],
+        "mitigations": [
+          "Restrict SSH to known IPs via firewall/security groups",
+          "Use jump hosts / bastion hosts for SSH access",
+          "Log and alert on all SSH connections"
+        ]
+      },
+      {
+        "id": "T1046",
+        "name": "Network Service Discovery",
+        "tactic": "Discovery",
+        "severity_weight": 3,
+        "real_world_examples": [
+          "APT28 uses nmap for initial network reconnaissance",
+          "FIN7 performs port scanning before targeting POS systems"
+        ],
+        "mitigations": [
+          "Network segmentation (reduce what attacker can see)",
+          "Firewall rules to block port scanning",
+          "IDS/IPS with scan detection signatures"
+        ]
+      }
+    ]
+  },
+  "ml_analysis": {
+    "anomalies_detected": 0,
+    "anomalous_ips": []
+  },
+  "response": {
+    "immediate_actions": [
+      "URGENT: Lock account 'alice' immediately",
+      "Block IP 198.51.100.73 at perimeter firewall and cloud security groups",
+      "Block IP 185.220.101.42 at perimeter firewall and cloud security groups",
+      "Block IP 192.168.1.50 at perimeter firewall and cloud security groups",
+      "Block IP 103.75.190.200 at perimeter firewall and cloud security groups",
+      "Block IP 45.142.212.100 at perimeter firewall and cloud security groups",
+      "Block IP 203.0.113.88 at perimeter firewall and cloud security groups",
+      "Reset all passwords for account 'alice'",
+      "Initiate host forensics on prod-webserver-01",
+      "Preserve auth logs before any rotation",
+      "Notify CISO and legal team (possible data breach)"
+    ],
+    "long_term_recommendations": [
+      "Implement MFA on all SSH access (eliminates brute force entirely)",
+      "Switch to SSH key authentication, disable password auth",
+      "Deploy SIEM alerting on this detection rule with lower threshold",
+      "Add attacker IP(s) to threat intelligence blocklist",
+      "Conduct tabletop exercise based on this attack scenario"
+    ],
+    "escalation_required": true,
+    "escalate_to": "Tier 2 SOC Analyst + CISO"
+  },
+  "raw_alerts": [
+    {
+      "rule_name": "BRUTE_FORCE_SUCCESS",
+      "severity": "CRITICAL",
+      "source_ip": "192.168.1.50",
+      "prior_failures": 3,
+      "successful_username": "alice",
+      "detection_timestamp": "2026-05-30 16:52:44",
+      "is_internal_ip": true,
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1078 - Valid Accounts (obtained via brute force)",
+      "recommended_action": "IMMEDIATE ACTION: Lock account 'alice'. Block IP 192.168.1.50. Assume host is compromised. Begin IR process.",
+      "alert_id": "SOC-00023",
+      "alert_received_at": "2026-05-30 16:52:44",
+      "status": "OPEN",
+      "is_correlated": false,
+      "correlated_with": []
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "198.51.100.73",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 16:53:58",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00024",
+      "alert_received_at": "2026-05-30 16:53:58",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "203.0.113.88",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 16:55:35",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00025",
+      "alert_received_at": "2026-05-30 16:55:35",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "185.220.101.42",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 16:57:12",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00026",
+      "alert_received_at": "2026-05-30 16:57:12",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "45.142.212.100",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 16:58:48",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00027",
+      "alert_received_at": "2026-05-30 16:58:48",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "103.75.190.200",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:00:24",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00028",
+      "alert_received_at": "2026-05-30 17:00:24",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "198.51.100.73",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:02:01",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00029",
+      "alert_received_at": "2026-05-30 17:02:01",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "203.0.113.88",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:03:40",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00030",
+      "alert_received_at": "2026-05-30 17:03:40",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "185.220.101.42",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:05:17",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00031",
+      "alert_received_at": "2026-05-30 17:05:17",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "45.142.212.100",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:06:54",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00032",
+      "alert_received_at": "2026-05-30 17:06:54",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "103.75.190.200",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:08:31",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00033",
+      "alert_received_at": "2026-05-30 17:08:31",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "198.51.100.73",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:10:08",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00034",
+      "alert_received_at": "2026-05-30 17:10:08",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "203.0.113.88",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:11:45",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00035",
+      "alert_received_at": "2026-05-30 17:11:45",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "185.220.101.42",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:13:22",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00036",
+      "alert_received_at": "2026-05-30 17:13:22",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    },
+    {
+      "rule_name": "PORT_SCAN_DETECTED",
+      "severity": "MEDIUM",
+      "source_ip": "45.142.212.100",
+      "rapid_connection_count": 5,
+      "window_seconds": 15,
+      "threshold": 5,
+      "detection_timestamp": "2026-05-30 17:14:59",
+      "is_internal_ip": false,
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "recommended_action": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+      "is_known_attacker": true,
+      "alert_id": "SOC-00037",
+      "alert_received_at": "2026-05-30 17:14:59",
+      "status": "OPEN",
+      "correlated_with": [
+        "PORT_SCAN_DETECTED",
+        "SSH_BRUTE_FORCE",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED",
+        "PORT_SCAN_DETECTED"
+      ],
+      "is_correlated": true
+    }
+  ]
+}

@@ -1,0 +1,832 @@
+[
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:00:24",
+    "completed_at": "2026-05-30 17:00:24",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "103.75.190.200",
+          "enriched_at": "2026-05-30 17:00:24",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:00:24"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170024-028",
+        "time": "17:00:24"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:00:24"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "103.75.190.200",
+        "time": "17:00:24"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170024-028 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:02:01",
+    "completed_at": "2026-05-30 17:02:01",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "198.51.100.73",
+          "enriched_at": "2026-05-30 17:02:01",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:02:01"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170201-029",
+        "time": "17:02:01"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:02:01"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "198.51.100.73",
+        "time": "17:02:01"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170201-029 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:03:40",
+    "completed_at": "2026-05-30 17:03:40",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 45,
+          "country": "CN",
+          "isp": "Example ISP (RFC 5737 test address)",
+          "known_as": "Credential stuffing source",
+          "reports": 88,
+          "last_seen": "2026-05-28",
+          "tags": [
+            "credential-stuffing"
+          ],
+          "ip": "203.0.113.88",
+          "enriched_at": "2026-05-30 17:03:40",
+          "block_confidence": "MEDIUM",
+          "recommendation": "Block with monitoring -- likely malicious"
+        },
+        "time": "17:03:40"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170340-030",
+        "time": "17:03:40"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:03:40"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "203.0.113.88",
+        "time": "17:03:40"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170340-030 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:05:17",
+    "completed_at": "2026-05-30 17:05:17",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 98,
+          "country": "DE",
+          "isp": "Frantech Solutions",
+          "known_as": "Tor exit node / scanning infrastructure",
+          "reports": 1247,
+          "last_seen": "2026-05-30",
+          "tags": [
+            "ssh",
+            "brute-force",
+            "tor-exit"
+          ],
+          "ip": "185.220.101.42",
+          "enriched_at": "2026-05-30 17:05:17",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:05:17"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170517-031",
+        "time": "17:05:17"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:05:17"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "already_blocked",
+        "output": "185.220.101.42",
+        "time": "17:05:17"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170517-031 created",
+      "SOC team notified via Slack",
+      "IP 185.220.101.42 blocked"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:06:54",
+    "completed_at": "2026-05-30 17:06:54",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 87,
+          "country": "RU",
+          "isp": "Selectel Ltd",
+          "known_as": "VPS commonly used for attacks",
+          "reports": 342,
+          "last_seen": "2026-05-29",
+          "tags": [
+            "scanner",
+            "brute-force"
+          ],
+          "ip": "45.142.212.100",
+          "enriched_at": "2026-05-30 17:06:54",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:06:54"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170654-032",
+        "time": "17:06:54"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:06:54"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "45.142.212.100",
+        "time": "17:06:54"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170654-032 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:08:31",
+    "completed_at": "2026-05-30 17:08:31",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "103.75.190.200",
+          "enriched_at": "2026-05-30 17:08:31",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:08:31"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-170831-033",
+        "time": "17:08:31"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:08:31"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "103.75.190.200",
+        "time": "17:08:31"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-170831-033 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:10:08",
+    "completed_at": "2026-05-30 17:10:08",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "198.51.100.73",
+          "enriched_at": "2026-05-30 17:10:08",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:10:08"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171008-034",
+        "time": "17:10:08"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:10:08"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "198.51.100.73",
+        "time": "17:10:08"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171008-034 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:11:45",
+    "completed_at": "2026-05-30 17:11:45",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 45,
+          "country": "CN",
+          "isp": "Example ISP (RFC 5737 test address)",
+          "known_as": "Credential stuffing source",
+          "reports": 88,
+          "last_seen": "2026-05-28",
+          "tags": [
+            "credential-stuffing"
+          ],
+          "ip": "203.0.113.88",
+          "enriched_at": "2026-05-30 17:11:45",
+          "block_confidence": "MEDIUM",
+          "recommendation": "Block with monitoring -- likely malicious"
+        },
+        "time": "17:11:45"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171145-035",
+        "time": "17:11:45"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:11:45"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "203.0.113.88",
+        "time": "17:11:45"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171145-035 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:13:22",
+    "completed_at": "2026-05-30 17:13:22",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 98,
+          "country": "DE",
+          "isp": "Frantech Solutions",
+          "known_as": "Tor exit node / scanning infrastructure",
+          "reports": 1247,
+          "last_seen": "2026-05-30",
+          "tags": [
+            "ssh",
+            "brute-force",
+            "tor-exit"
+          ],
+          "ip": "185.220.101.42",
+          "enriched_at": "2026-05-30 17:13:22",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:13:22"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171322-036",
+        "time": "17:13:22"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:13:22"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "already_blocked",
+        "output": "185.220.101.42",
+        "time": "17:13:22"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171322-036 created",
+      "SOC team notified via Slack",
+      "IP 185.220.101.42 blocked"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:14:59",
+    "completed_at": "2026-05-30 17:14:59",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 87,
+          "country": "RU",
+          "isp": "Selectel Ltd",
+          "known_as": "VPS commonly used for attacks",
+          "reports": 342,
+          "last_seen": "2026-05-29",
+          "tags": [
+            "scanner",
+            "brute-force"
+          ],
+          "ip": "45.142.212.100",
+          "enriched_at": "2026-05-30 17:14:59",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:14:59"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171459-037",
+        "time": "17:14:59"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:14:59"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "45.142.212.100",
+        "time": "17:14:59"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171459-037 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:16:36",
+    "completed_at": "2026-05-30 17:16:36",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "103.75.190.200",
+          "enriched_at": "2026-05-30 17:16:36",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:16:36"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171636-038",
+        "time": "17:16:36"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:16:36"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "103.75.190.200",
+        "time": "17:16:36"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171636-038 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:18:13",
+    "completed_at": "2026-05-30 17:18:13",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "198.51.100.73",
+          "enriched_at": "2026-05-30 17:18:13",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:18:13"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171813-039",
+        "time": "17:18:13"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:18:13"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "198.51.100.73",
+        "time": "17:18:13"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171813-039 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:19:51",
+    "completed_at": "2026-05-30 17:19:51",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 45,
+          "country": "CN",
+          "isp": "Example ISP (RFC 5737 test address)",
+          "known_as": "Credential stuffing source",
+          "reports": 88,
+          "last_seen": "2026-05-28",
+          "tags": [
+            "credential-stuffing"
+          ],
+          "ip": "203.0.113.88",
+          "enriched_at": "2026-05-30 17:19:51",
+          "block_confidence": "MEDIUM",
+          "recommendation": "Block with monitoring -- likely malicious"
+        },
+        "time": "17:19:51"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-171951-040",
+        "time": "17:19:51"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:19:51"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "203.0.113.88",
+        "time": "17:19:51"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-171951-040 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:21:28",
+    "completed_at": "2026-05-30 17:21:28",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 98,
+          "country": "DE",
+          "isp": "Frantech Solutions",
+          "known_as": "Tor exit node / scanning infrastructure",
+          "reports": 1247,
+          "last_seen": "2026-05-30",
+          "tags": [
+            "ssh",
+            "brute-force",
+            "tor-exit"
+          ],
+          "ip": "185.220.101.42",
+          "enriched_at": "2026-05-30 17:21:28",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:21:28"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-172128-041",
+        "time": "17:21:28"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:21:28"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "already_blocked",
+        "output": "185.220.101.42",
+        "time": "17:21:28"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-172128-041 created",
+      "SOC team notified via Slack",
+      "IP 185.220.101.42 blocked"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:23:07",
+    "completed_at": "2026-05-30 17:23:07",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 87,
+          "country": "RU",
+          "isp": "Selectel Ltd",
+          "known_as": "VPS commonly used for attacks",
+          "reports": 342,
+          "last_seen": "2026-05-29",
+          "tags": [
+            "scanner",
+            "brute-force"
+          ],
+          "ip": "45.142.212.100",
+          "enriched_at": "2026-05-30 17:23:07",
+          "block_confidence": "HIGH",
+          "recommendation": "Block immediately -- confirmed malicious IP"
+        },
+        "time": "17:23:07"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-172307-042",
+        "time": "17:23:07"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:23:07"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "45.142.212.100",
+        "time": "17:23:07"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-172307-042 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  },
+  {
+    "playbook": "PB-001: Port Scan Response",
+    "started_at": "2026-05-30 17:24:44",
+    "completed_at": "2026-05-30 17:24:44",
+    "status": "COMPLETED",
+    "steps_executed": [
+      {
+        "step": "ENRICH_THREAT",
+        "status": "SUCCESS",
+        "output": {
+          "abuse_score": 0,
+          "country": "??",
+          "isp": "Unknown",
+          "known_as": "No threat intel available",
+          "reports": 0,
+          "last_seen": "Never seen",
+          "tags": [],
+          "ip": "103.75.190.200",
+          "enriched_at": "2026-05-30 17:24:44",
+          "block_confidence": "LOW",
+          "recommendation": "Monitor only -- insufficient threat data"
+        },
+        "time": "17:24:44"
+      },
+      {
+        "step": "LOG_INCIDENT",
+        "status": "SUCCESS",
+        "output": "INC-20260530-172444-043",
+        "time": "17:24:44"
+      },
+      {
+        "step": "ALERT_SYSTEM",
+        "status": "SUCCESS",
+        "output": "SLACK + DASHBOARD",
+        "time": "17:24:44"
+      },
+      {
+        "step": "BLOCK_IP",
+        "status": "SKIPPED_LOW_CONFIDENCE",
+        "output": "103.75.190.200",
+        "time": "17:24:44"
+      }
+    ],
+    "human_approval_required": false,
+    "actions_taken": [
+      "Incident INC-20260530-172444-043 created",
+      "SOC team notified via Slack"
+    ],
+    "actions_blocked": []
+  }
+]

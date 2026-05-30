@@ -1,0 +1,52 @@
+{
+  "185.220.101.42": {
+    "ip": "185.220.101.42",
+    "blocked_at": "2026-05-30 16:25:41",
+    "reason": "Port scanner: Tor exit node / scanning infrastructure",
+    "alert_id": "SOC-00001",
+    "approved_by": "AUTOMATION",
+    "dry_run": true,
+    "auto_unblock_at": "2026-05-31 16:25:41",
+    "firewall_rule": "iptables -A INPUT -s 185.220.101.42 -j DROP"
+  },
+  "45.142.212.100": {
+    "ip": "45.142.212.100",
+    "blocked_at": "2026-05-30 16:27:24",
+    "reason": "SSH brute force: 5 failures. Threat intel: VPS commonly used for attacks",
+    "alert_id": "SOC-00003",
+    "approved_by": "AEGIS-AUTO",
+    "dry_run": true,
+    "auto_unblock_at": "2026-05-31 16:27:24",
+    "firewall_rule": "iptables -A INPUT -s 45.142.212.100 -j DROP"
+  },
+  "103.75.190.200": {
+    "ip": "103.75.190.200",
+    "blocked_at": "2026-05-30 16:28:57",
+    "reason": "SSH brute force: 5 failures. Threat intel: No threat intel available",
+    "alert_id": "SOC-00005",
+    "approved_by": "AEGIS-AUTO",
+    "dry_run": true,
+    "auto_unblock_at": "2026-05-31 16:28:57",
+    "firewall_rule": "iptables -A INPUT -s 103.75.190.200 -j DROP"
+  },
+  "198.51.100.73": {
+    "ip": "198.51.100.73",
+    "blocked_at": "2026-05-30 16:30:31",
+    "reason": "SSH brute force: 5 failures. Threat intel: No threat intel available",
+    "alert_id": "SOC-00007",
+    "approved_by": "AEGIS-AUTO",
+    "dry_run": true,
+    "auto_unblock_at": "2026-05-31 16:30:31",
+    "firewall_rule": "iptables -A INPUT -s 198.51.100.73 -j DROP"
+  },
+  "203.0.113.88": {
+    "ip": "203.0.113.88",
+    "blocked_at": "2026-05-30 16:32:05",
+    "reason": "SSH brute force: 5 failures. Threat intel: Credential stuffing source",
+    "alert_id": "SOC-00009",
+    "approved_by": "AEGIS-AUTO",
+    "dry_run": true,
+    "auto_unblock_at": "2026-05-31 16:32:05",
+    "firewall_rule": "iptables -A INPUT -s 203.0.113.88 -j DROP"
+  }
+}

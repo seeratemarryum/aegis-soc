@@ -1,0 +1,905 @@
+[
+  {
+    "incident_id": "INC-20260530-162541-001",
+    "created_at": "2026-05-30 16:25:41",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00001",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:25:41",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00001"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-162714-002",
+    "created_at": "2026-05-30 16:27:14",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00002",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:27:14",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00002"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-162724-003",
+    "created_at": "2026-05-30 16:27:24",
+    "status": "NEW",
+    "severity": "HIGH",
+    "alert_source": "SOC-00003",
+    "rule_triggered": "SSH_BRUTE_FORCE",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1110.001 - Brute Force: Password Guessing",
+    "description": "Block IP 45.142.212.100 at firewall. Check if any account was compromised. Review auth logs for success after failure.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:27:24",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00003"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-162848-004",
+    "created_at": "2026-05-30 16:28:48",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00004",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:28:48",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00004"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-162857-005",
+    "created_at": "2026-05-30 16:28:57",
+    "status": "NEW",
+    "severity": "HIGH",
+    "alert_source": "SOC-00005",
+    "rule_triggered": "SSH_BRUTE_FORCE",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1110.001 - Brute Force: Password Guessing",
+    "description": "Block IP 103.75.190.200 at firewall. Check if any account was compromised. Review auth logs for success after failure.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:28:57",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00005"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163021-006",
+    "created_at": "2026-05-30 16:30:21",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00006",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:30:21",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00006"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163031-007",
+    "created_at": "2026-05-30 16:30:31",
+    "status": "NEW",
+    "severity": "HIGH",
+    "alert_source": "SOC-00007",
+    "rule_triggered": "SSH_BRUTE_FORCE",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1110.001 - Brute Force: Password Guessing",
+    "description": "Block IP 198.51.100.73 at firewall. Check if any account was compromised. Review auth logs for success after failure.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:30:31",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00007"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163156-008",
+    "created_at": "2026-05-30 16:31:56",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00008",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:31:56",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00008"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163205-009",
+    "created_at": "2026-05-30 16:32:05",
+    "status": "NEW",
+    "severity": "HIGH",
+    "alert_source": "SOC-00009",
+    "rule_triggered": "SSH_BRUTE_FORCE",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1110.001 - Brute Force: Password Guessing",
+    "description": "Block IP 203.0.113.88 at firewall. Check if any account was compromised. Review auth logs for success after failure.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:32:05",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00009"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163339-010",
+    "created_at": "2026-05-30 16:33:39",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00010",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:33:39",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00010"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163512-011",
+    "created_at": "2026-05-30 16:35:12",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00011",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:35:12",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00011"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163646-012",
+    "created_at": "2026-05-30 16:36:46",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00012",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:36:46",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00012"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163819-013",
+    "created_at": "2026-05-30 16:38:19",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00013",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:38:19",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00013"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-163953-014",
+    "created_at": "2026-05-30 16:39:53",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00014",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:39:53",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00014"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164127-015",
+    "created_at": "2026-05-30 16:41:27",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00015",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:41:27",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00015"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164300-016",
+    "created_at": "2026-05-30 16:43:00",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00016",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:43:00",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00016"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164434-017",
+    "created_at": "2026-05-30 16:44:34",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00017",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:44:34",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00017"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164607-018",
+    "created_at": "2026-05-30 16:46:07",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00018",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:46:07",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00018"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164741-019",
+    "created_at": "2026-05-30 16:47:41",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00019",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:47:41",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00019"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-164914-020",
+    "created_at": "2026-05-30 16:49:14",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00020",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:49:14",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00020"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165048-021",
+    "created_at": "2026-05-30 16:50:48",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00021",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:50:48",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00021"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165221-022",
+    "created_at": "2026-05-30 16:52:21",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00022",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:52:21",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00022"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165244-023",
+    "created_at": "2026-05-30 16:52:44",
+    "status": "NEW",
+    "severity": "CRITICAL",
+    "alert_source": "SOC-00023",
+    "rule_triggered": "BRUTE_FORCE_SUCCESS",
+    "source_ip": "192.168.1.50",
+    "mitre_technique": "T1078 - Valid Accounts (obtained via brute force)",
+    "description": "IMMEDIATE ACTION: Lock account 'alice'. Block IP 192.168.1.50. Assume host is compromised. Begin IR process.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:52:44",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00023"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165358-024",
+    "created_at": "2026-05-30 16:53:58",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00024",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:53:58",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00024"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165535-025",
+    "created_at": "2026-05-30 16:55:35",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00025",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:55:35",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00025"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165712-026",
+    "created_at": "2026-05-30 16:57:12",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00026",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:57:12",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00026"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-165848-027",
+    "created_at": "2026-05-30 16:58:48",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00027",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 16:58:48",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00027"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170024-028",
+    "created_at": "2026-05-30 17:00:24",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00028",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:00:24",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00028"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170201-029",
+    "created_at": "2026-05-30 17:02:01",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00029",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:02:01",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00029"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170340-030",
+    "created_at": "2026-05-30 17:03:40",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00030",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:03:40",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00030"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170517-031",
+    "created_at": "2026-05-30 17:05:17",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00031",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:05:17",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00031"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170654-032",
+    "created_at": "2026-05-30 17:06:54",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00032",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:06:54",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00032"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-170831-033",
+    "created_at": "2026-05-30 17:08:31",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00033",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:08:31",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00033"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171008-034",
+    "created_at": "2026-05-30 17:10:08",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00034",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:10:08",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00034"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171145-035",
+    "created_at": "2026-05-30 17:11:45",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00035",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:11:45",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00035"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171322-036",
+    "created_at": "2026-05-30 17:13:22",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00036",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:13:22",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00036"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171459-037",
+    "created_at": "2026-05-30 17:14:59",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00037",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:14:59",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00037"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171636-038",
+    "created_at": "2026-05-30 17:16:36",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00038",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:16:36",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00038"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171813-039",
+    "created_at": "2026-05-30 17:18:13",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00039",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "198.51.100.73",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 198.51.100.73 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:18:13",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00039"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-171951-040",
+    "created_at": "2026-05-30 17:19:51",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00040",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "203.0.113.88",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 203.0.113.88 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:19:51",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00040"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-172128-041",
+    "created_at": "2026-05-30 17:21:28",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00041",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "185.220.101.42",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 185.220.101.42 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:21:28",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00041"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-172307-042",
+    "created_at": "2026-05-30 17:23:07",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00042",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "45.142.212.100",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 45.142.212.100 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:23:07",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00042"
+      }
+    ],
+    "report_summary": {}
+  },
+  {
+    "incident_id": "INC-20260530-172444-043",
+    "created_at": "2026-05-30 17:24:44",
+    "status": "NEW",
+    "severity": "MEDIUM",
+    "alert_source": "SOC-00043",
+    "rule_triggered": "PORT_SCAN_DETECTED",
+    "source_ip": "103.75.190.200",
+    "mitre_technique": "T1046 - Network Service Discovery",
+    "description": "Investigate IP 103.75.190.200 for reconnaissance. Check firewall logs for wider port sweep. Likely precursor to a targeted attack \u2014 watch for follow-up.",
+    "assigned_to": "Unassigned",
+    "timeline": [
+      {
+        "time": "2026-05-30 17:24:44",
+        "action": "INCIDENT_CREATED",
+        "by": "SOAR_AUTOMATION",
+        "note": "Auto-created from alert SOC-00043"
+      }
+    ],
+    "report_summary": {}
+  }
+]
