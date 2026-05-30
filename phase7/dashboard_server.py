@@ -209,7 +209,7 @@ class LiveSOCSimulator(threading.Thread):
                                 # Run SOAR response
                                 playbook_res = self.playbook_engine.run_playbook(processed_alert)
                                 self.soar_results.append(playbook_res.to_dict())
-                                self.save_json_atomic(DATA_PATHS["soar_results"], self.soar_results)
+                                self.save_json_atomic(DATA_PATHS["soar_results"], make_serializable(self.soar_results))
                                 
                                 # Read back incidents & blocks updated by SOAR
                                 self.blocked_ips = safe_load_json(DATA_PATHS["blocked_ips"], {})
@@ -233,7 +233,7 @@ class LiveSOCSimulator(threading.Thread):
                                 "n_estimators": self.ml_detector.n_estimators
                             }
                         }
-                        self.save_json_atomic(DATA_PATHS["ml_results"], ml_data)
+                        self.save_json_atomic(DATA_PATHS["ml_results"], make_serializable(ml_data))
                     except Exception:
                         pass
                 
@@ -247,11 +247,11 @@ class LiveSOCSimulator(threading.Thread):
                         ml_results=ml_results,
                         analyst_name="Aegis Incident Response Engine"
                     )
-                    self.save_json_atomic(DATA_PATHS["report"], report)
+                    self.save_json_atomic(DATA_PATHS["report"], make_serializable(report))
                 
                 # Write state files
-                self.save_json_atomic(DATA_PATHS["parsed"], self.parsed_events)
-                self.save_json_atomic(DATA_PATHS["alerts"], self.alerts)
+                self.save_json_atomic(DATA_PATHS["parsed"], make_serializable(self.parsed_events))
+                self.save_json_atomic(DATA_PATHS["alerts"], make_serializable(self.alerts))
                 
             except Exception as e:
                 print(f"[LiveSOCSimulator] Simulation error: {e}")
